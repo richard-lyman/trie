@@ -20,7 +20,8 @@ import (
 
 var wordTree *trie.Tree
 
-func createWords(words []string){
+func createWords(words []string) {
+	wordTree := &trie.Tree{"", []*trie.Tree{}}
 	for _, word := range words {
 		wordTree.Add(word)
 	}
@@ -28,7 +29,7 @@ func createWords(words []string){
 
 ...
 
-func provideWords(w http.ResponseWriter, r *http.Request){
+func provideWords(w http.ResponseWriter, r *http.Request) {
 	jsonWordTree, err := json.Marshal(wordTree)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
