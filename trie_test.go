@@ -6,10 +6,10 @@ import (
 )
 
 func testTree(t *testing.T) {
-	t := &trie.Tree{"", []*trie.Tree{}}
+	tt := &trie.Tree{"", []*trie.Tree{}}
 	words := []string{"a", "an", "and", "another", "always"}
 	for _, word := range words {
-		t.Add(word)
+		tt.Add(word)
 	}
-	//m, err := json.Marshal(t)
+	//m, err := json.Marshal(tt)
 }
